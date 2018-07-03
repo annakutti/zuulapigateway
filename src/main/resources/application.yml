@@ -1,0 +1,22 @@
+server:
+ port: 8600
+ 
+spring:
+ application:
+  name: zuul-apigateway
+
+eureka:
+ client:
+  registerWithEureka: true
+  fetchRegistry: true
+  serviceUrl:
+   defaultZone: http://192.168.99.100:8761/eureka
+ instance:
+  hostname: 192.168.99.100
+  
+zuul:
+ routes:
+  feignenabled-client:
+   serviceId: feignenabled-client
+  h2db-microservice:
+   serviceId: h2db-microservice
